@@ -1,0 +1,146 @@
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #f4efef;
+background-image:url(./image/6.logo.webp);
+background-attachment:fixed;
+background-size:cover;
+background-repeat: no-repeat;
+
+} 
+
+    header {
+      background-color: #d62828;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+     
+    }
+    header input {
+      padding: 5px;
+      font-size: 16px;
+    }
+    nav a {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .trending-bar {
+      background-color: #767676;
+      padding: 10px 20px;
+      font-size: 14px;
+      color: #ffcc00;
+    }
+    .movie-section {
+      display: flex;
+      padding: 30px 20px;
+    }
+    .movie-info {
+      flex: 1;
+    }
+    .movie-info h1 {
+      font-size: 40px;
+      margin: 0;
+    }
+    .movie-info p {
+      font-size: 16px;
+      color: #ffffff;
+    }
+    .movie-buttons {
+      margin: 15px 0;
+    }
+    .movie-buttons button {
+      margin-right: 10px;
+      padding: 10px 20px;
+      background: #ffffff;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .movie-image {
+      flex: 1;
+      padding-left: 40px;
+    }
+    .movie-image img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .video-section {
+      padding: 20px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .video-card {
+      width: 240px;
+      background-color: #222;
+      padding: 10px;
+      border-radius: 8px;
+    }
+    .video-card img {
+      width: 100%;
+      border-radius: 5px;
+    }
+    .video-card p {
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+
+        .container {
+            width: 90%;
+            margin: 20px auto;
+        }
+        .section {
+            margin-bottom: 40px;
+            text-align: left;
+            color: #f4efef;
+        }
+        .section h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .movies-row, .webseries-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: space-between;
+        }
+        .movie:hover img{
+           transform: scale(1.08);
+        }
+        .movie, .webseries {
+            background-color: #ffffff;
+            border-radius: 8px;
+            width: 23%;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(88, 85, 85, 0.274);
+        }
+        .movie img, .webseries img {
+            width: 100%;
+            height: 180px;
+            object-fit:fill;
+            
+            cursor: pointer;
+        }
+        .movie p, .webseries p {
+            padding: 60px;
+            text-align: center;
+        }
+        .btn-see-more {
+            display:inline-block;
+            background-color: #ff0404;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration:none;
+            border-radius: 5px;
+            font-size: 16px;
+            text-align: center;
+        }
+        .btn-see-more:hover {
+            background-color: #ff0606;
+        }
