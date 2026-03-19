@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        background: url("./image/06.jpg") no-repeat center center/cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(5px);
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        backdrop-filter: blur(4px);
+    }
+
+    .login-box {
+        position: relative;
+        width: 420px;
+        padding: 40px;
+        background: rgba(0,0,0,0.45);
+        border-radius: 20px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255,255,255,0.15);
+        z-index: 2;
+    }
+
+    .login-box h2 {
+        text-align: center;
+        color: white;
+        margin-bottom: 28px;
+        font-size: 26px;
+        font-weight: 600;
+    }
+
+    .input-group {
+        margin-bottom: 18px;
+    }
+
+    .input-group label {
+        color: #ccc;
+        font-size: 14px;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    .input-group input {
+        width: 100%;
+        padding: 12px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        font-size: 15px;
+        background: rgba(255,255,255,0.15);
+        color: #fff;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px;
+        background: linear-gradient(90deg, #4f46e5, #3b82f6);
+        border: none;
+        border-radius: 10px;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    .btn:hover {
+        opacity: 0.9;
+    }
+
+    .error {
+        text-align: center;
+        color: #ff6b6b;
+        margin-bottom: 12px;
+        display: none;
+    }
+
+    /* SUCCESS POPUP */
+    .success-popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.7);
+        background: #28a745;
+        color: white;
+        padding: 20px 30px;
+        border-radius: 15px;
+        font-size: 18px;
+        font-weight: 600;
+        opacity: 0;
+        transition: 0.3s ease;
+        z-index: 999;
+        text-align: center;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+
+    .success-popup.show {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    @media (max-width: 480px) {
+        .login-box {
+            width: 90%;
+            padding: 30px;
+        }
+    }
+</style>
+
+</head>
+<body>
+
+<div class="overlay"></div>
+
+<div class="login-box">
+    <h2>Admin Login</h2>
+
+    <p id="errorMsg" class="error">Invalid credentials!</p>
+
+    <div class="input-group">
+        <label>Admin Username</label>
+        <input type="text" id="username" placeholder="Enter username">
+    </div>
+
+    <div class="input-group">
+        <label>Password</label>
+        <input type="password" id="password" placeholder="Enter password">
+    </div>
+
+    <button class="btn" onclick="login()">Login</button>
+</div>
+
+<!-- SUCCESS POPUP -->
+<div id="successPopup" class="success-popup">
+    ✅ Login Successful!
+</div>
+
+<script>
+function login() {
+    let u = document.getElementById("username").value.trim();
+    let p = document.getElementById("password").value.trim();
+
+    if (u === "MRKIT" && p === "MRKIT2025") {
+        showSuccessPopup();
+    } else {
+        document.getElementById("errorMsg").style.display = "block";
+    }
+}
+
+function showSuccessPopup() {
+    let popup = document.getElementById("successPopup");
+    popup.classList.add("show");
+
+    // Redirect after 1.5 seconds
+    setTimeout(() => {
+        window.location.href = "admin-dashboard.html";
+    }, 1500);
+}
+
+// ENTER key submits
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        login();
+    }
+});
+</script>
+
+</body>
+</html>
